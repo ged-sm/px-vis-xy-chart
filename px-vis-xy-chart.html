@@ -14,37 +14,37 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="../px-vis/px-vis-behavior-common.html"/>
-<link rel="import" href="../px-vis/px-vis-behavior-d3.html"/>
-<link rel="import" href="../px-vis/px-vis-behavior-renderer.html"/>
-<link rel="import" href="../px-vis/px-vis-behavior-chart.html"/>
-<link rel="import" href="../px-vis/px-vis-behavior-scale.html"/>
-<link rel="import" href="../px-vis/px-vis-svg-canvas.html"/>
-<link rel="import" href="../px-vis/px-vis-scatter.html"/>
-<link rel="import" href="../px-vis/px-vis-scatter-canvas.html"/>
-<link rel="import" href="../px-vis/px-vis-line-canvas.html"/>
-<link rel="import" href="../px-vis/px-vis-line-svg.html"/>
-<link rel="import" href="../px-vis/px-vis-axis.html"/>
-<link rel="import" href="../px-vis/px-vis-multi-axis.html"/>
-<link rel="import" href="../px-vis/px-vis-tooltip.html"/>
-<link rel="import" href="../px-vis/px-vis-interaction-space.html"/>
-<link rel="import" href="../px-vis/px-vis-register.html"/>
-<link rel="import" href="../px-vis/px-vis-cursor.html"/>
-<link rel="import" href="../px-vis/px-vis-clip-path.html"/>
-<link rel="import" href="../px-vis/px-vis-event.html"/>
-<link rel="import" href="../px-vis/px-vis-gridlines.html"/>
-<link rel="import" href="../px-vis/px-vis-toolbar.html"/>
+<link rel="import" href="../polymer/polymer.html" />
+<link rel="import" href="../px-vis/px-vis-behavior-common.html" />
+<link rel="import" href="../px-vis/px-vis-behavior-d3.html" />
+<link rel="import" href="../px-vis/px-vis-behavior-renderer.html" />
+<link rel="import" href="../px-vis/px-vis-behavior-chart.html" />
+<link rel="import" href="../px-vis/px-vis-behavior-scale.html" />
+<link rel="import" href="../px-vis/px-vis-svg-canvas.html" />
+<link rel="import" href="../px-vis/px-vis-scatter.html" />
+<link rel="import" href="../px-vis/px-vis-scatter-canvas.html" />
+<link rel="import" href="../px-vis/px-vis-line-canvas.html" />
+<link rel="import" href="../px-vis/px-vis-line-svg.html" />
+<link rel="import" href="../px-vis/px-vis-axis.html" />
+<link rel="import" href="../px-vis/px-vis-multi-axis.html" />
+<link rel="import" href="../px-vis/px-vis-tooltip.html" />
+<link rel="import" href="../px-vis/px-vis-interaction-space.html" />
+<link rel="import" href="../px-vis/px-vis-register.html" />
+<link rel="import" href="../px-vis/px-vis-cursor.html" />
+<link rel="import" href="../px-vis/px-vis-clip-path.html" />
+<link rel="import" href="../px-vis/px-vis-event.html" />
+<link rel="import" href="../px-vis/px-vis-gridlines.html" />
+<link rel="import" href="../px-vis/px-vis-toolbar.html" />
 <link rel="import" href="../iron-resizable-behavior/iron-resizable-behavior.html" />
-<link rel="import" href="../px-vis/px-vis-highlight-point.html"/>
-<link rel="import" href="../px-vis/px-vis-highlight-point-canvas.html"/>
-<link rel="import" href="../px-vis/px-vis-markers.html"/>
-<link rel="import" href="../px-vis/px-vis-annotations.html"/>
-<link rel="import" href="../px-vis/px-vis-reference-curve.html"/>
-<link rel="import" href="../px-vis/px-vis-central-tooltip-content.html"/>
-<link rel="import" href="../px-tooltip/px-tooltip.html"/>
+<link rel="import" href="../px-vis/px-vis-highlight-point.html" />
+<link rel="import" href="../px-vis/px-vis-highlight-point-canvas.html" />
+<link rel="import" href="../px-vis/px-vis-markers.html" />
+<link rel="import" href="../px-vis/px-vis-annotations.html" />
+<link rel="import" href="../px-vis/px-vis-reference-curve.html" />
+<link rel="import" href="../px-vis/px-vis-central-tooltip-content.html" />
+<link rel="import" href="../px-tooltip/px-tooltip.html" />
 
-<link rel="import" href="css/px-vis-xy-chart-styles.html"/>
+<link rel="import" href="css/px-vis-xy-chart-styles.html" />
 
 
 <!--
@@ -121,7 +121,7 @@ Custom property | Description
 -->
 
 <dom-module id="px-vis-xy-chart">
-  <template>
+    <template>
     <style include="px-vis-xy-chart-styles"></style>
     <div id="wrapper" class$="{{_chartWrapperClass}}">
       <!-- Legend -->
@@ -225,7 +225,7 @@ Custom property | Description
                 serie-to-redraw-on-top="[[serieToRedrawOnTop]]">
               </px-vis-scatter-canvas>
             </template>
-            <template is="dom-if" if="[[!renderToCanvas]]" restamp>
+    <template is="dom-if" if="[[!renderToCanvas]]" restamp>
               <px-vis-scatter
                 svg="[[layer.1]]"
                 series-id="[[item]]"
@@ -239,8 +239,8 @@ Custom property | Description
                 serie-to-redraw-on-top="[[serieToRedrawOnTop]]">
               </px-vis-scatter>
             </template>
-          </template>
-          <template is="dom-if" if="[[_chartTypeLine(item, completeSeriesConfig)]]" restamp>
+    </template>
+    <template is="dom-if" if="[[_chartTypeLine(item, completeSeriesConfig)]]" restamp>
             <template is="dom-if" if="[[renderToCanvas]]" restamp>
               <px-vis-line-canvas
                 id="lineCanvas"
@@ -262,7 +262,7 @@ Custom property | Description
                 serie-to-redraw-on-top="[[serieToRedrawOnTop]]">
               </px-vis-line-canvas>
             </template>
-            <template is="dom-if" if="[[!renderToCanvas]]" restamp>
+    <template is="dom-if" if="[[!renderToCanvas]]" restamp>
               <px-vis-line-svg
                 svg="[[layer.1]]"
                 series-id="[[item]]"
@@ -278,67 +278,24 @@ Custom property | Description
                 serie-to-redraw-on-top="[[serieToRedrawOnTop]]">
               </px-vis-line-svg>
             </template>
-          </template>
-        </template>
-        <px-vis-cursor
-          id="cursor"
-          svg="[[layer.2]]"
-          width="[[width]]"
-          height="[[height]]"
-          margin="[[_internalMargin]]"
-          chart-data="[[_filteredData]]"
-          tooltip-data="[[_registerTooltipData]]"
-          complete-series-config="[[completeSeriesConfig]]"
-          clip-path="[[seriesClipPath]]"
-          muted-series="[[mutedSeries]]"
-          hard-mute="[[hardMute]]"
-          series-keys="[[_seriesKeys]]">
-        </px-vis-cursor>
-      </div>
+    </template>
+    </template>
+    <px-vis-cursor id="cursor" svg="[[layer.2]]" width="[[width]]" height="[[height]]" margin="[[_internalMargin]]" chart-data="[[_filteredData]]" tooltip-data="[[_registerTooltipData]]" complete-series-config="[[completeSeriesConfig]]" clip-path="[[seriesClipPath]]"
+        muted-series="[[mutedSeries]]" hard-mute="[[hardMute]]" series-keys="[[_seriesKeys]]">
+    </px-vis-cursor>
+    </div>
 
-      <!-- X axis -->
-      <px-vis-axis
-        id="xAxis"
-        svg="[[layer.0]]"
-        axis-type="[[xAxisType]]"
-        axis="[[x]]"
-        height="[[height]]"
-        width="[[width]]"
-        margin="[[_internalMargin]]"
-        orientation="[[xAxisLocation]]"
-        complete-series-config="[[completeSeriesConfig]]"
-        prevent-series-bar
-        domain-changed="[[domainChanged]]"
+    <!-- X axis -->
+    <px-vis-axis id="xAxis" svg="[[layer.0]]" axis-type="[[xAxisType]]" axis="[[x]]" height="[[height]]" width="[[width]]" margin="[[_internalMargin]]" orientation="[[xAxisLocation]]" complete-series-config="[[completeSeriesConfig]]" prevent-series-bar domain-changed="[[domainChanged]]"
         muted-series="[[mutedSeries]]">
-      </px-vis-axis>
-      <!-- Y axis -->
-      <px-vis-multi-axis
-        id="yAxes"
-        svg="[[layer.0]]"
-        width="[[width]]"
-        height="[[height]]"
-        margin="[[_internalMargin]]"
-        left-axis-size="[[leftAxisSize]]"
-        right-axis-size="[[rightAxisSize]]"
-        x="[[_axisX]]"
-        y="[[y]]"
-        domain-changed="[[_bothDomainsSet(_axisDomainChanged, domainChanged)]]"
-        complete-series-config="[[_multiAxisSeriesConfig]]"
-        chart-data="[[chartData]]"
-        dimensions="[[dimensions]]"
-        axes="[[axes]]"
-        axis-config="[[yAxisConfig]]"
-        append-unit-in-title
-        orientation-from-dimensions
-        disable-brush
-        cartesian-drag-behavior
-        allow-empty-title
-        series-to-axes="[[seriesToAxes]]"
-        muted-series="[[mutedSeries]]"
-        action-config="[[_axisActionConfig]]">
-      </px-vis-multi-axis>
+    </px-vis-axis>
+    <!-- Y axis -->
+    <px-vis-multi-axis id="yAxes" svg="[[layer.0]]" width="[[width]]" height="[[height]]" margin="[[_internalMargin]]" left-axis-size="[[leftAxisSize]]" right-axis-size="[[rightAxisSize]]" x="[[_axisX]]" y="[[y]]" domain-changed="[[_bothDomainsSet(_axisDomainChanged, domainChanged)]]"
+        complete-series-config="[[_multiAxisSeriesConfig]]" chart-data="[[chartData]]" dimensions="[[dimensions]]" axes="[[axes]]" axis-config="[[yAxisConfig]]" append-unit-in-title orientation-from-dimensions disable-brush cartesian-drag-behavior allow-empty-title
+        series-to-axes="[[seriesToAxes]]" muted-series="[[mutedSeries]]" action-config="[[_axisActionConfig]]">
+    </px-vis-multi-axis>
 
-      <template is="dom-if" if="[[!hideGridlinesX]]" restamp>
+    <template is="dom-if" if="[[!hideGridlinesX]]" restamp>
         <px-vis-gridlines
           svg="[[svgLower]]"
           axis="[[x]]"
@@ -349,7 +306,7 @@ Custom property | Description
         </px-vis-gridlines>
       </template>
 
-      <template is="dom-if" if="[[_showHorizontalGrid(hideGridlinesY, axes, y, matchTicks)]]" restamp>
+    <template is="dom-if" if="[[_showHorizontalGrid(hideGridlinesY, axes, y, matchTicks)]]" restamp>
         <px-vis-gridlines
           svg="[[svgLower]]"
           axis="[[_returnGridAxis(domainChanged)]]"
@@ -360,69 +317,19 @@ Custom property | Description
         </px-vis-gridlines>
       </template>
 
-      <px-vis-interaction-space
-        id="interactionSpace"
-        svg="[[layer.3]]"
-        width="[[width]]"
-        height="[[height]]"
-        margin="[[_internalMargin]]"
-        x="[[x]]"
-        y="[[y]]"
-        domain-changed="[[domainChanged]]"
-        use-quadtree
-        series-keys="[[_seriesKeys]]"
-        chart-data="[[_filteredData]]"
-        chart-id="[[chartId]]"
-        tooltip-data="{{tooltipData}}"
-        crosshair-data="{{crosshairData}}"
-        default-empty-data="[[defaultEmptyData]]"
-        generating-crosshair-data="{{generatingCrosshairData}}"
-        extents-data="{{extentsData}}"
-        x-axis-type="[[xAxisType]]"
-        y-axis-type="[[yAxisType]]"
-        complete-series-config="[[completeSeriesConfig]]"
-        mouse-rect="{{mouseRect}}"
-        time-data="[[timeData]]"
-        action-config="{{actionConfig}}"
-        show-tooltip="{{_computedShowTooltip}}"
-        selection-type="[[selectionType]]"
-        prevent-web-worker-synchronization="[[preventWebWorkerSynchronization]]"
-        ww-data-sync-counter="[[wwDataSyncCounter]]"
-        extents-action="{{extentsAction}}"
-        hard-mute="[[hardMute]]"
-        muted-series="[[mutedSeries]]"
-        log-base="[[logBase]]">
-      </px-vis-interaction-space>
+    <px-vis-interaction-space id="interactionSpace" svg="[[layer.3]]" width="[[width]]" height="[[height]]" margin="[[_internalMargin]]" x="[[x]]" y="[[y]]" domain-changed="[[domainChanged]]" use-quadtree series-keys="[[_seriesKeys]]" chart-data="[[_filteredData]]"
+        chart-id="[[chartId]]" tooltip-data="{{tooltipData}}" crosshair-data="{{crosshairData}}" default-empty-data="[[defaultEmptyData]]" generating-crosshair-data="{{generatingCrosshairData}}" extents-data="{{extentsData}}" x-axis-type="[[xAxisType]]" y-axis-type="[[yAxisType]]"
+        complete-series-config="[[completeSeriesConfig]]" mouse-rect="{{mouseRect}}" time-data="[[timeData]]" action-config="{{actionConfig}}" show-tooltip="{{_computedShowTooltip}}" selection-type="[[selectionType]]" prevent-web-worker-synchronization="[[preventWebWorkerSynchronization]]"
+        ww-data-sync-counter="[[wwDataSyncCounter]]" extents-action="{{extentsAction}}" hard-mute="[[hardMute]]" muted-series="[[mutedSeries]]" log-base="[[logBase]]">
+    </px-vis-interaction-space>
 
-      <px-vis-markers
-        canvas-context="[[canvasLayers.markers]]"
-        canvas-layers-config="{{canvasLayersConfig}}"
-        width="[[width]]"
-        height="[[height]]"
-        x="[[x]]"
-        domain-changed="[[domainChanged]]"
-        marker-data="[[markerData]]"
-        marker-config="[[markerConfig]]"
-        margin="[[_internalMarginMarkers]]"
-        resources="[[resources]]"
-        language="[[language]]"
-        formats="[[formats]]">
-      </px-vis-markers>
+    <px-vis-markers canvas-context="[[canvasLayers.markers]]" canvas-layers-config="{{canvasLayersConfig}}" width="[[width]]" height="[[height]]" x="[[x]]" domain-changed="[[domainChanged]]" marker-data="[[markerData]]" marker-config="[[markerConfig]]" margin="[[_internalMarginMarkers]]"
+        resources="[[resources]]" language="[[language]]" formats="[[formats]]">
+    </px-vis-markers>
 
-      <px-vis-event
-        svg="[[layer.0]]"
-        event-data="[[eventData]]"
-        x-axis-type="[[xAxisType]]"
-        height="[[height]]"
-        margin="[[_internalMargin]]"
-        x="[[x]]"
-        domain-changed="[[domainChanged]]"
-        event-config="[[eventConfig]]"
-        clip-path="[[clipPath]]"
-        resources="[[resources]]"
-        language="[[language]]"
-        formats="[[formats]]">
-      </px-vis-event>
+    <px-vis-event svg="[[layer.0]]" event-data="[[eventData]]" x-axis-type="[[xAxisType]]" height="[[height]]" margin="[[_internalMargin]]" x="[[x]]" domain-changed="[[domainChanged]]" event-config="[[eventConfig]]" clip-path="[[clipPath]]" resources="[[resources]]"
+        language="[[language]]" formats="[[formats]]">
+    </px-vis-event>
     </div>
 
     <template id="highlighterDomIf" is="dom-if" if="[[renderToCanvas]]" restamp on-dom-change="_highlighterConfigChanged">
@@ -486,559 +393,550 @@ Custom property | Description
       </px-vis-reference-curve>
     </template>
 
-    <px-tooltip
-      id="centralTooltip"
-      smart-orientation
-      ignore-target-events
-      orientation="[[tooltipOrientation]]">
-      <px-vis-central-tooltip-content
-        resources="[[resources]]"
-        use-key-if-missing="[[useKeyIfMissing]]"
-        language="[[language]]"
-        first-date-time-format="[[firstDateTimeFormat]]"
-        second-date-time-format="[[secondDateTimeFormat]]"
-        separator="[[separator]]"
-        timezone="[[timezone]]">
-      </px-vis-central-tooltip-content>
+    <px-tooltip id="centralTooltip" smart-orientation ignore-target-events orientation="[[tooltipOrientation]]">
+        <px-vis-central-tooltip-content resources="[[resources]]" use-key-if-missing="[[useKeyIfMissing]]" language="[[language]]" first-date-time-format="[[firstDateTimeFormat]]" second-date-time-format="[[secondDateTimeFormat]]" separator="[[separator]]" timezone="[[timezone]]">
+        </px-vis-central-tooltip-content>
     </px-tooltip>
 
-  </template>
+    </template>
 </dom-module>
 
 <script>
-  Polymer({
+    Polymer({
 
-    is: 'px-vis-xy-chart',
+        is: 'px-vis-xy-chart',
 
-    behaviors: [
-      PxVisBehavior.observerCheck,
-      PxVisBehaviorScale.scale,
-      PxVisBehaviorD3.svg,
-      PxVisBehaviorD3.axes,
-      PxVisBehaviorD3.selectedDomain,
-      PxVisBehaviorD3.clipPath,
-      PxVisBehavior.dataset,
-      PxVisBehavior.mutedSeries,
-      PxVisBehavior.sizing,
-      PxVisBehavior.tooltipData,
-      PxVisBehavior.extentsData,
-      PxVisBehavior.chartExtents,
-      PxVisBehavior.axisTypes,
-      PxVisBehavior.events,
-      PxVisBehavior.completeSeriesConfig,
-      PxVisBehaviorChart.chartCommon,
-      PxVisBehaviorChart.saveImage,
-      PxVisBehaviorChart.subConfiguration,
-      PxVisBehaviorChart.timeFiltering,
-      PxVisBehaviorD3.domainUpdate,
-      PxVisBehaviorChart.registerPositioning,
-      PxVisBehaviorChart.chartAutoResize,
-      PxVisBehaviorChart.layers,
-      PxColorsBehavior.dataVisColorTheming,
-      PxVisBehavior.serieToRedrawOnTop,
-      PxVisBehavior.dynamicMenuConfig,
-      PxVisBehavior.actionConfig,
-      PxVisBehaviorChart.zooming,
-      PxVisBehaviorChart.actionRequest,
-      PxVisBehaviorChart.toolbarSubConfig,
-      PxVisBehaviorChart.noDebounceOnPanning,
-      PxVisBehaviorChart.chartToolbarConfig,
-      PxVisBehaviorChart.multiAxis,
-      PxVisBehaviorD3.lineGaps,
-      PxVisBehaviorChart.showTooltip,
-      PxVisBehavior.muteUnmuteSeries,
-      PxVisBehavior.zoomSelection,
-      PxVisBehaviorChart.tooltipFollowMouseCalculation,
-      PxVisBehavior.selectionType,
-      PxVisBehaviorD3.canvasContext,
-      PxVisBehaviorD3.renderToCanvas,
-      PxVisBehaviorChart.highlighterConfigs,
-      PxVisBehaviorChart.mouseCusorConfig,
-      PxVisBehavior.crosshairData,
-      PxVisBehaviorChart.webWorkerSynchronization,
-      Polymer.AppLocalizeBehavior,
-      PxVisBehaviorRenderer.base,
-      PxVisBehavior.annotationData,
-      PxVisBehaviorChart.cursorConfig,
-      PxVisBehaviorChart.registerPagnation,
-      PxVisBehaviorChart.sizeVerticalRegister,
-      PxVisBehavior.referenceCurveProps,
-      PxVisBehaviorChart.centralTooltip
+        behaviors: [
+            PxVisBehavior.observerCheck,
+            PxVisBehaviorScale.scale,
+            PxVisBehaviorD3.svg,
+            PxVisBehaviorD3.axes,
+            PxVisBehaviorD3.selectedDomain,
+            PxVisBehaviorD3.clipPath,
+            PxVisBehavior.dataset,
+            PxVisBehavior.mutedSeries,
+            PxVisBehavior.sizing,
+            PxVisBehavior.tooltipData,
+            PxVisBehavior.extentsData,
+            PxVisBehavior.chartExtents,
+            PxVisBehavior.axisTypes,
+            PxVisBehavior.events,
+            PxVisBehavior.completeSeriesConfig,
+            PxVisBehaviorChart.chartCommon,
+            PxVisBehaviorChart.saveImage,
+            PxVisBehaviorChart.subConfiguration,
+            PxVisBehaviorChart.timeFiltering,
+            PxVisBehaviorD3.domainUpdate,
+            PxVisBehaviorChart.registerPositioning,
+            PxVisBehaviorChart.chartAutoResize,
+            PxVisBehaviorChart.layers,
+            PxColorsBehavior.dataVisColorTheming,
+            PxVisBehavior.serieToRedrawOnTop,
+            PxVisBehavior.dynamicMenuConfig,
+            PxVisBehavior.actionConfig,
+            PxVisBehaviorChart.zooming,
+            PxVisBehaviorChart.actionRequest,
+            PxVisBehaviorChart.toolbarSubConfig,
+            PxVisBehaviorChart.noDebounceOnPanning,
+            PxVisBehaviorChart.chartToolbarConfig,
+            PxVisBehaviorChart.multiAxis,
+            PxVisBehaviorD3.lineGaps,
+            PxVisBehaviorChart.showTooltip,
+            PxVisBehavior.muteUnmuteSeries,
+            PxVisBehavior.zoomSelection,
+            PxVisBehaviorChart.tooltipFollowMouseCalculation,
+            PxVisBehavior.selectionType,
+            PxVisBehaviorD3.canvasContext,
+            PxVisBehaviorD3.renderToCanvas,
+            PxVisBehaviorChart.highlighterConfigs,
+            PxVisBehaviorChart.mouseCusorConfig,
+            PxVisBehavior.crosshairData,
+            PxVisBehaviorChart.webWorkerSynchronization,
+            Polymer.AppLocalizeBehavior,
+            PxVisBehaviorRenderer.base,
+            PxVisBehavior.annotationData,
+            PxVisBehaviorChart.cursorConfig,
+            PxVisBehaviorChart.registerPagnation,
+            PxVisBehaviorChart.sizeVerticalRegister,
+            PxVisBehavior.referenceCurveProps,
+            PxVisBehaviorChart.centralTooltip
 
-    ],
-    properties: {
-      /** 
-       * Determines the position of the X axis.
-       * - `bottom`
-       * - `top`
-       *
-       * @property xAxisLocation
-       * @type String
-       * @default bottom
-       */
-      xAxisLocation: {
-        type: String,
-        value: 'bottom'
-      },
-      /**
-       * Configuration object used to customize the X axis cosmetic properties.
-       * Please refer to px-vis-axis (https://github.com/PredixDev/px-vis) for a list of supported proerties
-       *
-       */
-      xAxisConfig: {
-        type: Object
-      },
-      /**
-       * Configuration object used to customize the Y axis cosmetic properties.
-       * Please refer to px-vis-axis (https://github.com/PredixDev/px-vis) for a list of supported proerties
-       *
-       */
-      yAxisConfig: {
-        type: Object
-      },
-      /**
-       * Configuration object used to customize the tooltip.
-       * Please refer to px-vis-tooltip (https://github.com/PredixDev/px-vis) for a list of supported properties.
-       * Most interesting properties include:
-       * -width
-       * -height
-       *
-       */
-      tooltipConfig: {
-        type: Object
-      },
-      /**
-       * Configuration object used to customize the tooltip.
-       * Please refer to px-vis-register (https://github.com/PredixDev/px-vis) for a list of supported properties.
-       * Most interesting properties include:
-       * -width
-       * -height
-       *
-       */
-      registerConfig: {
-        type: Object
-      },
-      mouseRect: {
-        type: Object
-      },
-      /**
-       * Whether to hide the gridlines perpendicular to the X axis
-       */
-      hideGridlinesX: {
-        type: Boolean,
-        value: false
-      },
-      /**
-       * Whether to hide the gridlines perpendicular to the Y axis
-       */
-      hideGridlinesY: {
-        type: Boolean,
-        value: false
-      },
+        ],
+        properties: {
+            /** 
+             * Determines the position of the X axis.
+             * - `bottom`
+             * - `top`
+             *
+             * @property xAxisLocation
+             * @type String
+             * @default bottom
+             */
+            xAxisLocation: {
+                type: String,
+                value: 'bottom'
+            },
+            /**
+             * Configuration object used to customize the X axis cosmetic properties.
+             * Please refer to px-vis-axis (https://github.com/PredixDev/px-vis) for a list of supported proerties
+             *
+             */
+            xAxisConfig: {
+                type: Object
+            },
+            /**
+             * Configuration object used to customize the Y axis cosmetic properties.
+             * Please refer to px-vis-axis (https://github.com/PredixDev/px-vis) for a list of supported proerties
+             *
+             */
+            yAxisConfig: {
+                type: Object
+            },
+            /**
+             * Configuration object used to customize the tooltip.
+             * Please refer to px-vis-tooltip (https://github.com/PredixDev/px-vis) for a list of supported properties.
+             * Most interesting properties include:
+             * -width
+             * -height
+             *
+             */
+            tooltipConfig: {
+                type: Object
+            },
+            /**
+             * Configuration object used to customize the tooltip.
+             * Please refer to px-vis-register (https://github.com/PredixDev/px-vis) for a list of supported properties.
+             * Most interesting properties include:
+             * -width
+             * -height
+             *
+             */
+            registerConfig: {
+                type: Object
+            },
+            mouseRect: {
+                type: Object
+            },
+            /**
+             * Whether to hide the gridlines perpendicular to the X axis
+             */
+            hideGridlinesX: {
+                type: Boolean,
+                value: false
+            },
+            /**
+             * Whether to hide the gridlines perpendicular to the Y axis
+             */
+            hideGridlinesY: {
+                type: Boolean,
+                value: false
+            },
 
-      /**
-       * Defines the adjusted margin for adding markers. By default the chart
-       * already calculates margins for the markers (taking into account
-       * axes and normal margin) but this can be used to manually adjust
-       * where the markers are drawn
-       * margin object:
-       * - top
-       * - bottom
-       * - left
-       * - right
-       * Not every property needs to be defined, only the one that have been
-       * defined will be used.
-       */
-      marginMarkersAdjustment: {
-        type: Object,
-        value: function() { return {}; },
-      },
-      _internalMargin: {
-        type: Object,
-        notify: true
-      },
-      _internalMarginNav: {
-        type: Object
-      },
-      _internalMarginMarkers: {
-        type: Object
-      },
+            /**
+             * Defines the adjusted margin for adding markers. By default the chart
+             * already calculates margins for the markers (taking into account
+             * axes and normal margin) but this can be used to manually adjust
+             * where the markers are drawn
+             * margin object:
+             * - top
+             * - bottom
+             * - left
+             * - right
+             * Not every property needs to be defined, only the one that have been
+             * defined will be used.
+             */
+            marginMarkersAdjustment: {
+                type: Object,
+                value: function() {
+                    return {};
+                },
+            },
+            _internalMargin: {
+                type: Object,
+                notify: true
+            },
+            _internalMarginNav: {
+                type: Object
+            },
+            _internalMarginMarkers: {
+                type: Object
+            },
 
-      /**
-       * A boolean to specify if the axis ticks should align (which affects
-       * their individual range). Default (false) is for each have their own
-       * ranges and tick marks may not align
-       * Only useful if using multiple axis
-       */
-      matchTicks: {
-        type: Boolean,
-        value: false
-      },
+            /**
+             * A boolean to specify if the axis ticks should align (which affects
+             * their individual range). Default (false) is for each have their own
+             * ranges and tick marks may not align
+             * Only useful if using multiple axis
+             */
+            matchTicks: {
+                type: Boolean,
+                value: false
+            },
 
-      _axisActionConfig: {
-        type: Object,
-        notify: true,
-        computed: '_computeAxisActionConfig(dimensions.*, _isAttached)'
-      },
+            _axisActionConfig: {
+                type: Object,
+                notify: true,
+                computed: '_computeAxisActionConfig(dimensions.*, _isAttached)'
+            },
 
-      /**
-       * List of key/values to be included for translating this component
-       */
-      resources: {
-        type: Object
-      },
-      /**
-      * set a default for localizing
-      */
-      language: {
-        type: String,
-        value: 'en'
-      },
-      /**
-      * Use the key for localization if value for  language is missing. Should
-      * always be true for  our components
-      */
-      useKeyIfMissing: {
-        type: Boolean,
-        value: true
-      }
-    },
-    observers: [
-      '_xAxisConfigChanged(xAxisConfig.*)',
-      '_toolbarConfigChanged(toolbarConfig.*)',
-      '_createLayersOnce(svg, numberOfLayers)',
-      '_highlighterConfigChanged(highlighterConfig.*)',
-      '_mouseCursorConfigChanged(mouseCursorConfig.*)',
-      '_cursorConfigChanged(cursorConfig.*)',
-      '_interactionSpaceConfigChanged(interactionSpaceConfig.*)',
-      '_registerConfigChanged(registerConfig.*)',
-      '_tooltipConfigChanged(tooltipConfig.*)',
+            /**
+             * List of key/values to be included for translating this component
+             */
+            resources: {
+                type: Object
+            },
+            /**
+             * set a default for localizing
+             */
+            language: {
+                type: String,
+                value: 'en'
+            },
+            /**
+             * Use the key for localization if value for  language is missing. Should
+             * always be true for  our components
+             */
+            useKeyIfMissing: {
+                type: Boolean,
+                value: true
+            }
+        },
+        observers: [
+            '_xAxisConfigChanged(xAxisConfig.*)',
+            '_toolbarConfigChanged(toolbarConfig.*)',
+            '_createLayersOnce(svg, numberOfLayers)',
+            '_highlighterConfigChanged(highlighterConfig.*)',
+            '_mouseCursorConfigChanged(mouseCursorConfig.*)',
+            '_cursorConfigChanged(cursorConfig.*)',
+            '_interactionSpaceConfigChanged(interactionSpaceConfig.*)',
+            '_registerConfigChanged(registerConfig.*)',
+            '_tooltipConfigChanged(tooltipConfig.*)',
 
-      '_calcAxes(completeSeriesConfig.*)',
-      '_calcAxes(leftAxisSize, rightAxisSize)',
-      '_calcMargins(margin.*, numRightAxes, numLeftAxes)',
-      '_calcMarkerMargins(_internalMargin, marginMarkersAdjustment)',
-      '_setXScale(width, _internalMargin)',
-      '_setMultiYScale(height, _internalMargin, axes.*)',
-      '_setDomainCaller(wwDataSyncCounter, x, y, dataExtents, seriesToAxes.*)',
-      '_setDomainCaller(x, y, dataExtents, seriesToAxes.*)',
-      '_setDomainCaller(x, y, chartExtents, dataExtents)',
-      '_updateDomain(selectedDomain)',
-      '_keepDataInSync(_filteredData.*, chartId)',
-      '_seriesKeysChanged(_seriesKeys.*)',
-      '_langChanged(language)',
-      '_mutedChanged(mutedSeries.*, hardMute)',
-      '_tooltipDataUpdated(tooltipData.*)',
+            '_calcAxes(completeSeriesConfig.*)',
+            '_calcAxes(leftAxisSize, rightAxisSize)',
+            '_calcMargins(margin.*, numRightAxes, numLeftAxes)',
+            '_calcMarkerMargins(_internalMargin, marginMarkersAdjustment)',
+            '_setXScale(width, _internalMargin)',
+            '_setMultiYScale(height, _internalMargin, axes.*)',
+            '_setDomainCaller(wwDataSyncCounter, x, y, dataExtents, seriesToAxes.*)',
+            '_setDomainCaller(x, y, dataExtents, seriesToAxes.*)',
+            '_setDomainCaller(x, y, chartExtents, dataExtents)',
+            '_updateDomain(selectedDomain)',
+            '_keepDataInSync(_filteredData.*, chartId)',
+            '_seriesKeysChanged(_seriesKeys.*)',
+            '_langChanged(language)',
+            '_mutedChanged(mutedSeries.*, hardMute)',
+            '_tooltipDataUpdated(tooltipData.*)',
 
-      //renderer
-      '_renderFilteredChartData(domainChanged, canvasContext, _filteredData.*, completeSeriesConfig.*, preventInitialDrawing, renderToCanvas)',
-      '_renderOnMute(mutedSeries.*)',
-      '_renderHighlight(domainChanged, canvasLayers.highlighter, completeSeriesConfig.*, preventInitialDrawing)',
-      '_renderSeriesOnTop(serieToRedrawOnTop)',
-      '_renderMarkers(canvasLayers.markers, domainChanged, markerData, markerConfig, preventInitialDrawing)'
-    ],
+            //renderer
+            '_renderFilteredChartData(domainChanged, canvasContext, _filteredData.*, completeSeriesConfig.*, preventInitialDrawing, renderToCanvas)',
+            '_renderOnMute(mutedSeries.*)',
+            '_renderHighlight(domainChanged, canvasLayers.highlighter, completeSeriesConfig.*, preventInitialDrawing)',
+            '_renderSeriesOnTop(serieToRedrawOnTop)',
+            '_renderMarkers(canvasLayers.markers, domainChanged, markerData, markerConfig, preventInitialDrawing)'
+        ],
 
-    created: function() {
-      this._tooltipCalcHoverTargetId = 'wrapper';
-      this._wwSyncDataPropName = '_filteredData';
-    },
+        created: function() {
+            this._tooltipCalcHoverTargetId = 'wrapper';
+            this._wwSyncDataPropName = '_filteredData';
+        },
 
-    ready: function() {
-      this.set('_verticalRegisterDrawingCanvasId', 'svg');
-      this.set('_verticalRegisterHeightDeductions', ['toolbar']);
-      this.set('numberOfLayers',4);
-    },
-    attached: function() {
-      this._isAttached = true;
-    },
+        ready: function() {
+            this.set('_verticalRegisterDrawingCanvasId', 'svg');
+            this.set('_verticalRegisterHeightDeductions', ['toolbar']);
+            this.set('numberOfLayers', 4);
+        },
+        attached: function() {
+            this._isAttached = true;
+        },
 
-    _xAxisConfigChanged: function(conf) {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
+        _xAxisConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.xAxisConfig, this.$.xAxis);
-    },
+            this._applyConfigToElement(this.xAxisConfig, this.$.xAxis);
+        },
 
-    _tooltipConfigChanged: function(conf) {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
+        _tooltipConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.tooltipConfig, this.$.tooltip);
-    },
-    _registerConfigChanged: function(conf) {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+            this._applyConfigToElement(this.tooltipConfig, this.$.tooltip);
+        },
+        _registerConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.registerConfig, this.$.register);
-    },
-    _toolbarConfigChanged: function(conf) {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+            this._applyConfigToElement(this.registerConfig, this.$.register);
+        },
+        _toolbarConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.toolbarConfig, this.$.toolbar);
-    },
-    _interactionSpaceConfigChanged: function(interactionSpaceConfig) {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+            this._applyConfigToElement(this.toolbarConfig, this.$.toolbar);
+        },
+        _interactionSpaceConfigChanged: function(interactionSpaceConfig) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.interactionSpaceConfig, this.$.interactionSpace)
-    },
+            this._applyConfigToElement(this.interactionSpaceConfig, this.$.interactionSpace)
+        },
 
-    _highlighterConfigChanged: function() {
+        _highlighterConfigChanged: function() {
 
-      var elem = this.renderToCanvas ? this.$$('#highlighterCanvas') : this.$$('#highlighter');
-      if(elem && this._doesObjHaveValues(this.highlighterConfig)) {
-        this._applyConfigToElement(this.highlighterConfig, elem);
-      }
-    },
-    _cursorConfigChanged: function(conf) {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+            var elem = this.renderToCanvas ? this.$$('#highlighterCanvas') : this.$$('#highlighter');
+            if (elem && this._doesObjHaveValues(this.highlighterConfig)) {
+                this._applyConfigToElement(this.highlighterConfig, elem);
+            }
+        },
+        _cursorConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.cursorConfig, this.$.cursor);
-    },
-    _mouseCursorConfigChanged: function(conf) {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+            this._applyConfigToElement(this.cursorConfig, this.$.cursor);
+        },
+        _mouseCursorConfigChanged: function(conf) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this._applyConfigToElement(this.mouseCursorConfig, this.$.mouseCursor);
-    },
+            this._applyConfigToElement(this.mouseCursorConfig, this.$.mouseCursor);
+        },
 
-    _seriesKeysChanged: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
+        _seriesKeysChanged: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      //make sure we clean the canvas so that ols series are removed
-      if(this.renderToCanvas && this.canvasContext && this.canvasContext.pxClearCanvas) {
-        this.canvasContext.pxClearCanvas();
-      }
-    },
+            //make sure we clean the canvas so that ols series are removed
+            if (this.renderToCanvas && this.canvasContext && this.canvasContext.pxClearCanvas) {
+                this.canvasContext.pxClearCanvas();
+            }
+        },
 
-    _resizeCalculations: function() {
+        _resizeCalculations: function() {
 
-      //make sure we are not preventing resize in case it changed while debouncing
-      if(this.preventResize) {
-        return;
-      }
-      var wrapperRect = this.$.wrapper.getBoundingClientRect(),
-          registerRect = this.$.register.getBoundingClientRect(),
-          toolbarRect = this.$.toolbar.getBoundingClientRect(),
-          heightDeduct = 0,
-          widthDeduct = 0;
+            //make sure we are not preventing resize in case it changed while debouncing
+            if (this.preventResize) {
+                return;
+            }
+            var wrapperRect = this.$.wrapper.getBoundingClientRect(),
+                registerRect = this.$.register.getBoundingClientRect(),
+                toolbarRect = this.$.toolbar.getBoundingClientRect(),
+                heightDeduct = 0,
+                widthDeduct = 0;
 
 
-      if(this.$.register.type === 'horizontal') {
-        heightDeduct += registerRect.height;
-      } else {
-        widthDeduct += registerRect.width;
-      }
+            if (this.$.register.type === 'horizontal') {
+                heightDeduct += registerRect.height;
+            } else {
+                widthDeduct += registerRect.width;
+            }
 
-      heightDeduct += toolbarRect.height;
+            heightDeduct += toolbarRect.height;
 
-      this.set('width', Math.max(wrapperRect.width - widthDeduct, 0));
-      this.set('height', Math.max(wrapperRect.height - heightDeduct, 0));
-      this._computeVerticalRegisterHeight([toolbarRect.height]);
-    },
+            this.set('width', Math.max(wrapperRect.width - widthDeduct, 0));
+            this.set('height', Math.max(wrapperRect.height - heightDeduct, 0));
+            this._computeVerticalRegisterHeight([toolbarRect.height]);
+        },
 
-    /**
-     * Overwrites default margins based on settings
-     *
-     * @method _calcMargins
-     */
-    _calcMargins:function() {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
+        /**
+         * Overwrites default margins based on settings
+         *
+         * @method _calcMargins
+         */
+        _calcMargins: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
 
-      this.debounce('_calcMargin', function() {
-        var margin,
-            topMargin = 25,
-            rightMargin = 10,
-            bottomMargin = 10,
-            leftMargin = 10;
+            this.debounce('_calcMargin', function() {
+                var margin,
+                    topMargin = 25,
+                    rightMargin = 10,
+                    bottomMargin = 10,
+                    leftMargin = 10;
 
-        // if the dev didnt set the margin, then calc it
-        if(JSON.stringify(this._defaultMargin) === JSON.stringify(this.margin)) {
-          if(this.xAxisLocation === 'bottom') {
-            bottomMargin = 40;
-          } else if(this.xAxisLocation === 'top') {
-            topMargin = 40;
-          }
+                // if the dev didnt set the margin, then calc it
+                if (JSON.stringify(this._defaultMargin) === JSON.stringify(this.margin)) {
+                    if (this.xAxisLocation === 'bottom') {
+                        bottomMargin = 40;
+                    } else if (this.xAxisLocation === 'top') {
+                        topMargin = 40;
+                    }
 
-          if(this.yAxisLocation === 'left') {
-            leftMargin = 50;
-          } else if(this.yAxisLocation === 'right') {
-            rightMargin = 50;
-          }
+                    if (this.yAxisLocation === 'left') {
+                        leftMargin = 50;
+                    } else if (this.yAxisLocation === 'right') {
+                        rightMargin = 50;
+                    }
 
-          margin = {
-            'top': topMargin,
-            'right': rightMargin,
-            'bottom': bottomMargin,
-            'left': leftMargin
-          };
+                    margin = {
+                        'top': topMargin,
+                        'right': rightMargin,
+                        'bottom': bottomMargin,
+                        'left': leftMargin
+                    };
 
-          this._calcMultiMargins(margin, 50, 50);
+                    this._calcMultiMargins(margin, 50, 50);
 
-        } else { //is dev set, use it
-          margin = {
-            'top': Number(this.margin.top) || Number(this.margin.top) === 0 ? Number(this.margin.top) : topMargin,
-            'right': Number(this.margin.right) || Number(this.margin.right) === 0 ? Number(this.margin.right) : rightMargin,
-            'bottom': Number(this.margin.bottom) || Number(this.margin.bottom) === 0 ? Number(this.margin.bottom) : bottomMargin,
-            'left':  Number(this.margin.left) || Number(this.margin.left) === 0 ? Number(this.margin.left) : leftMargin
-          };
+                } else { //is dev set, use it
+                    margin = {
+                        'top': Number(this.margin.top) || Number(this.margin.top) === 0 ? Number(this.margin.top) : topMargin,
+                        'right': Number(this.margin.right) || Number(this.margin.right) === 0 ? Number(this.margin.right) : rightMargin,
+                        'bottom': Number(this.margin.bottom) || Number(this.margin.bottom) === 0 ? Number(this.margin.bottom) : bottomMargin,
+                        'left': Number(this.margin.left) || Number(this.margin.left) === 0 ? Number(this.margin.left) : leftMargin
+                    };
 
-          // FIXME
-          // assume the margin is the side for one axis. Might not be a good assumption. Rethink this
-          this._calcMultiMargins(margin, margin.left, margin.right);
+                    // FIXME
+                    // assume the margin is the side for one axis. Might not be a good assumption. Rethink this
+                    this._calcMultiMargins(margin, margin.left, margin.right);
+                }
+
+                this.set('_internalMargin', margin);
+
+            }, 5);
+        },
+        _calcMarkerMargins: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            var newMarg = {
+                'top': this._internalMargin.top,
+                'left': this._internalMargin.left,
+                'right': this._internalMargin.right,
+                'bottom': this._internalMargin.bottom
+            }
+
+            // Handle X axis
+            if (this.xAxisLocation === 'bottom') {
+                newMarg.bottom -= (this.xAxisConfig && this.xAxisConfig.title && this.xAxisConfig.title.trim().length > 0) ? 40 : 15;
+            } else if (this.xAxisLocation === 'top') {
+                newMarg.top -= 40;
+            }
+
+            newMarg.top += Number(this.marginMarkersAdjustment.top || 0);
+            newMarg.bottom += Number(this.marginMarkersAdjustment.bottom || 0);
+            newMarg.left += Number(this.marginMarkersAdjustment.left || 0);
+            newMarg.right += Number(this.marginMarkersAdjustment.right || 0);
+
+            this.set('_internalMarginMarkers', newMarg);
+        },
+
+        _showHorizontalGrid: function(hideGrid, axes, y, matchTicks) {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            if (hideGrid) {
+                return false;
+            }
+
+            if (this.axes.length > 1 && !matchTicks) {
+                return false;
+            }
+
+            return true;
+        },
+
+        _returnGridAxis: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            return this.y[this.axes[0]];
+        },
+
+        _returnXDomain: function() {
+            if (this.domainChanged) {
+                return this.x.domain();
+            }
+        },
+
+        _mutedChanged: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            if (this.hardMute === true) {
+                this._setDomainCaller();
+            }
+        },
+
+        _setDomainCaller: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            if (this._doesObjHaveValues(this.seriesToAxes)) {
+                this._setDomain();
+            }
+        },
+
+        _bothDomainsSet: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            if (this.domainChanged && this._axisDomainChanged) {
+                // check if 'this.$.yAxes.domainChanged' is undefined use
+                // 'this.domainChanged' to initialize 'domainChanged' property on 'px-vis-multi-axis'
+                return this.$.yAxes.domainChanged ? (this.$.yAxes.domainChanged + 1) : (this.domainChanged + 1);
+            }
+        },
+
+        _renderOnMute: function() {
+            if (!this.domainChanged || !this.canvasContext) {
+                return;
+            }
+
+            if (this.hardMute) {
+                this.canvasContext.pxClearCanvas();
+                return;
+            }
+
+            this._renderFilteredChartData();
+        },
+
+        _computeAxisActionConfig: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            var conf;
+
+            conf = this.dimensions.length > 2 ? {
+                "mouseout": null,
+                "mousemove": null,
+                "mousedown": 'callAxisDrag',
+                "mouseup": 'callAxisDrag'
+            } : {
+                "mouseout": null,
+                "mousemove": null,
+                "mousedown": null,
+                "mouseup": null
+            };
+
+            return conf;
+        },
+        _langChanged: function() {
+            if (this.hasUndefinedArguments(arguments)) {
+                return;
+            }
+
+            //recreate X and Y in case d3 locale changed
+            this._recreateScales(this.width, this.height, this._internalMargin);
+        },
+
+        _showRef: function() {
+            return this.referenceData && this.referenceData.length ? true : false;
         }
-
-        this.set('_internalMargin', margin);
-
-      }, 5);
-    },
-    _calcMarkerMargins: function () {
-      if (this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      var newMarg = {
-        'top': this._internalMargin.top,
-        'left': this._internalMargin.left,
-        'right': this._internalMargin.right,
-        'bottom': this._internalMargin.bottom
-      }
-
-      // Handle X axis
-      if (this.xAxisLocation === 'bottom') {
-        newMarg.bottom -= 40;
-      } else if (this.xAxisLocation === 'top') {
-        newMarg.top -= 40;
-      }
-
-      newMarg.top += Number(this.marginMarkersAdjustment.top || 0);
-      newMarg.bottom += Number(this.marginMarkersAdjustment.bottom || 0);
-      newMarg.left += Number(this.marginMarkersAdjustment.left || 0);
-      newMarg.right += Number(this.marginMarkersAdjustment.right || 0);
-
-      this.set('_internalMarginMarkers', newMarg);
-    },
-
-    _showHorizontalGrid: function(hideGrid, axes, y, matchTicks) {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      if(hideGrid) {
-        return false;
-      }
-
-      if(this.axes.length > 1 && !matchTicks) {
-        return false;
-      }
-
-      return true;
-    },
-
-    _returnGridAxis: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-        return this.y[this.axes[0]];
-    },
-
-    _returnXDomain: function() {
-      if(this.domainChanged) {
-        return this.x.domain();
-      }
-    },
-
-    _mutedChanged: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      if(this.hardMute === true) {
-        this._setDomainCaller();
-      }
-    },
-
-    _setDomainCaller: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      if(this._doesObjHaveValues(this.seriesToAxes)) {
-        this._setDomain();
-      }
-    },
-
-    _bothDomainsSet: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      if(this.domainChanged && this._axisDomainChanged) {
-		  // check if 'this.$.yAxes.domainChanged' is undefined use
-		  // 'this.domainChanged' to initialize 'domainChanged' property on 'px-vis-multi-axis'
-		  return this.$.yAxes.domainChanged ? (this.$.yAxes.domainChanged + 1) : (this.domainChanged + 1);
-      }
-    },
-
-    _renderOnMute: function() {
-      if(!this.domainChanged || !this.canvasContext) {
-        return;
-      }
-
-      if(this.hardMute) {
-        this.canvasContext.pxClearCanvas();
-        return;
-      }
-
-      this._renderFilteredChartData();
-    },
-
-    _computeAxisActionConfig: function() {
-      if(this.hasUndefinedArguments(arguments)) {
-        return;
-      }
-
-      var conf;
-
-      conf = this.dimensions.length > 2 ? {
-          "mouseout": null,
-          "mousemove": null,
-          "mousedown": 'callAxisDrag',
-          "mouseup": 'callAxisDrag'
-        } : {
-          "mouseout": null,
-          "mousemove": null,
-          "mousedown": null,
-          "mouseup": null
-        };
-
-      return conf;
-    },
-    _langChanged: function() {
-     if(this.hasUndefinedArguments(arguments)) {
-       return;
-     }
-
-      //recreate X and Y in case d3 locale changed
-      this._recreateScales(this.width, this.height, this._internalMargin);
-    },
-
-    _showRef: function() {
-      return this.referenceData && this.referenceData.length ? true : false;
-    }
-  });
+    });
 </script>
