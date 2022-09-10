@@ -43,6 +43,7 @@ limitations under the License.
 <link rel="import" href="../px-vis/px-vis-reference-curve.html" />
 <link rel="import" href="../px-vis/px-vis-central-tooltip-content.html" />
 <link rel="import" href="../px-tooltip/px-tooltip.html" />
+<link rel="import" href="../px-vis/px-vis-threshold.html" />
 
 <link rel="import" href="css/px-vis-xy-chart-styles.html" />
 
@@ -330,6 +331,10 @@ Custom property | Description
     <px-vis-event svg="[[layer.0]]" event-data="[[eventData]]" x-axis-type="[[xAxisType]]" height="[[height]]" margin="[[_internalMargin]]" x="[[x]]" domain-changed="[[domainChanged]]" event-config="[[eventConfig]]" clip-path="[[clipPath]]" resources="[[resources]]"
         language="[[language]]" formats="[[formats]]">
     </px-vis-event>
+
+    <px-vis-threshold svg="[[layer.2]]" complete-series-config="[[completeSeriesConfig]]" threshold-data="[[thresholdData]]" threshold-config="[[thresholdConfig]]" width="[[width]]" margin="[[_internalMargin]]" y="[[y]]" domain-changed="[[domainChanged]]"
+        clip-path="[[seriesClipPath]]" show-threshold-box="[[showThresholdBox]]" language="[[language]]">
+    </px-vis-threshold>
     </div>
 
     <template id="highlighterDomIf" is="dom-if" if="[[renderToCanvas]]" restamp on-dom-change="_highlighterConfigChanged">
@@ -459,8 +464,9 @@ Custom property | Description
             PxVisBehaviorChart.registerPagnation,
             PxVisBehaviorChart.sizeVerticalRegister,
             PxVisBehavior.referenceCurveProps,
-            PxVisBehaviorChart.centralTooltip
-
+            PxVisBehaviorChart.centralTooltip,
+            PxVisBehavior.thresholds,
+            PxVisBehaviorChart.thresholdConfig
         ],
         properties: {
             /** 
