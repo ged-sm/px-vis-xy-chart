@@ -697,6 +697,12 @@ Custom property | Description
             this._isAttached = true;
         },
 
+        detached: function detached() {
+            this.chartData = [];
+            this.markerData = [];
+            this._markerData = [];
+        },
+
         _xAxisConfigChanged: function(conf) {
             if (this.hasUndefinedArguments(arguments)) {
                 return;
